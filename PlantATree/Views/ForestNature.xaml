@@ -1,0 +1,287 @@
+﻿<UserControl 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:my="clr-namespace:PlantATree.Views"
+    xmlns:controls="clr-namespace:PlantATree.Controls"         
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:GalaSoft_MvvmLight_Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.SL4"  
+    xmlns:GamePack="clr-namespace:GamePack"  
+    x:Class="PlantATree.Views.ForestNature"         
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800"         
+    Width="800" Height="600"
+    >
+	<UserControl.Resources>
+		<Storyboard x:Name="Cloud3Storyboard">
+			<DoubleAnimation Duration="0" To="-5" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Cloud_3" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0" To="3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Cloud_3" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="Cloud5StoryBoard" RepeatBehavior="Forever" AutoReverse="True">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Cloud_5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-5"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:0" Value="-402"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30" Value="-392"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:10" Value="-5"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Cloud_5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-4"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:0" Value="36"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30" Value="32"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:10" Value="8"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="Cloud4Storyboard" RepeatBehavior="Forever">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Cloud_4_Copy">
+				<EasingDoubleKeyFrame KeyTime="0" Value="7"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30" Value="-482"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30.3" Value="237"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:31" Value="4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Cloud_4_Copy">
+				<EasingDoubleKeyFrame KeyTime="0" Value="3"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30" Value="6"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:30.3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:31" Value="4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Cloud_4_Copy">
+				<DiscreteObjectKeyFrame KeyTime="0">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:1:30">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Collapsed</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+				<DiscreteObjectKeyFrame KeyTime="0:1:30.3">
+					<DiscreteObjectKeyFrame.Value>
+						<Visibility>Visible</Visibility>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="Cloud1Storyboard" RepeatBehavior="Forever" AutoReverse="True">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Cloud_1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="7"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:45" Value="439"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:50" Value="438"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="6"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Cloud_1">
+				<EasingDoubleKeyFrame KeyTime="0:1:45" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:1:50" Value="24"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:2:50" To="0.25" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="turtle" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:2:50" To="16" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="turtle" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:2:50" To="0.25" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="turtle" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:2:50" To="-208" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="turtle" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="TurtleStoryboard" RepeatBehavior="Forever" AutoReverse="True">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="112"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:50" Value="120"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:0" Value="204"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="240"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0" Value="332.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0.5" Value="332.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:40" Value="-11.6"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:42" Value="-11.6"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:57" Value="2.4"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="8"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="-32"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:50" Value="-28"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:0" Value="-8"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="2"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0" Value="94"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0.5" Value="94"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:40" Value="32"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:42" Value="32"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:57" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0" Value="1.273"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0.5" Value="-1.273"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:40" Value="-1.273"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:42" Value="1.273"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:50" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:3:0" Value="1.455"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0" Value="24"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:30" Value="20"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:50" Value="24"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:0" Value="22"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="turtle">
+				<EasingPointKeyFrame KeyTime="0:0:50" Value="0.5,0.5"/>
+				<EasingPointKeyFrame KeyTime="0:2:0" Value="0.4,0.2"/>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="turtle">
+				<EasingDoubleKeyFrame KeyTime="0:0:50" Value="20"/>
+				<EasingDoubleKeyFrame KeyTime="0:2:0" Value="22"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.DataContext>
+		<Binding Path="ForestNatureViewModel" Source="{StaticResource Locator}"/>
+	</UserControl.DataContext>
+    <Canvas Width="800" Height="600" 
+            x:Name="NatureRootCanvas"
+            Background="{StaticResource SkyFillBrush}">
+    	<i:Interaction.Triggers>
+    		<i:EventTrigger EventName="MouseLeftButtonDown">
+    			<GamePack:GameEnvironment/>
+    		</i:EventTrigger>
+    	</i:Interaction.Triggers>
+        <!--Sun-->
+        <Ellipse Width="180" Height="180" 
+				 Style="{StaticResource SunEllipseStyle}" Canvas.Left="244" Canvas.Top="177" Stroke="{x:Null}" />
+
+        <!--Hill-->
+        <Path  x:Name="Hill"
+		        Canvas.Left="0" Canvas.Top="264" 
+		        Data="F1 M343.703,316.85901 C343.703,316.85999 181.10201,275.85901 0,334.431 L0,599.80798 L799.74402,599.80798 L799.74402,293.431 C799.74402,293.431 644.76398,211.42999 343.703,316.85901 z" 
+		        Style="{StaticResource HillPathStyle}" 
+                Height="336" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Path>
+
+        <!--River-->
+        <Path x:Name="River"
+              Width="210" 
+              Height="284" 
+              Stretch="Fill" 
+              Fill="#FF4982ED" 
+              Data="F1 M 341.62,316.107C 342.611,316.662 150.246,372.075 320.356,460.172C 320.356,460.172 355.645,474.682 322.166,492.302C 322.166,492.302 264.483,515.323 214.606,599.808L 375.433,599.808C 375.433,599.808 355.076,549.044 401.899,516.398C 401.899,516.398 454.829,461.599 391.72,437.114C 391.72,437.114 316.395,418.459 310.288,410.298C 310.288,410.298 240.053,364.826 341.62,316.107 Z " Canvas.Left="226" Canvas.Top="314" />
+
+        <!--Clouds-->
+        <Path x:Name="Cloud_1"
+			Width="97" Height="72" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" Canvas.Top="24" RenderTransformOrigin="0.5,0.5" >
+        	<Path.RenderTransform>
+        		<CompositeTransform/>
+        	</Path.RenderTransform>
+        </Path>
+        <Path x:Name="Cloud_2"
+			Width="72" Height="48" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" Canvas.Left="600" Canvas.Top="53" />
+        <Path x:Name="Cloud_3"
+			Width="77" Height="49" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" Canvas.Left="213" Canvas.Top="12" RenderTransformOrigin="0.5,0.5" >
+        	<Path.RenderTransform>
+        		<CompositeTransform/>
+        	</Path.RenderTransform>
+        </Path>
+        <Path x:Name="Cloud_4"
+			Width="73" Height="48" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" Canvas.Left="79" Canvas.Top="177" />
+        <Path x:Name="Cloud_5"
+			Width="97" Height="60" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" Canvas.Left="549" Canvas.Top="24" RenderTransformOrigin="0.5,0.5" >
+        	<Path.RenderTransform>
+        		<CompositeTransform/>
+        	</Path.RenderTransform>
+        </Path>
+
+
+        <StackPanel 
+            x:Name="ButtonsPanel"
+            Height="Auto" Canvas.Left="736" Canvas.Top="12" Width="52" Opacity="0.85" Style="{StaticResource PaperStackPanelStyle}" Background="{StaticResource DarkRecycledPaperBrush}"
+            Canvas.ZIndex="10000"
+            >
+            <Button Height="40" Margin="5,5,5,0" Style="{StaticResource PaperDarkButtonStyle}" 
+                    ToolTipService.ToolTip="Plant a tree on the hill :)" Command="{Binding StartPlantingCommand}">
+                    <StackPanel>
+                        <controls:TreeControl Width="20" Height="20"/>
+                        <TextBlock Text="New" />
+                    </StackPanel>
+            </Button>
+            <Button Height="40" Margin="5,5,5,0" Style="{StaticResource PaperDarkButtonStyle}" Command="{Binding EndPlantingCommand}"
+                    ToolTipService.ToolTip="Cancel tree planting" Visibility="{Binding IsPlantingMode, Converter={StaticResource BoolToVisibility}}">
+                    <StackPanel>
+                        <Image Width="20" Height="20" Source="/PlantATree;component/Assets/Media/cancel-icon.png" />
+                        <TextBlock Text="Cancel"/>
+                    </StackPanel>
+            </Button>
+            <Button Height="40" Margin="5" Style="{StaticResource PaperDarkButtonStyle}" Command="{Binding ShowAboutWindowCommand}">
+                    <StackPanel>
+                        <Image Width="20" Height="20" Source="/PlantATree;component/Assets/Media/info-icon.png" />
+                        <TextBlock Text="About"/>
+                    </StackPanel>
+            </Button>
+            <Button Height="40" Margin="5" Style="{StaticResource PaperDarkButtonStyle}" Command="{Binding ShowHelpWindowCommand}">
+                    <StackPanel>
+                        <Image Width="20" Height="20" Source="/PlantATree;component/Assets/Media/help-icon.png" />
+                        <TextBlock Text="Help"/>
+                    </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel 
+            x:Name="TreesCountPanel"
+            Height="Auto" Canvas.Left="8" Canvas.Top="556"  Style="{StaticResource PaperStackPanelStyle}" Background="{StaticResource DarkRecycledPaperBrush}" Opacity="0.85"
+            Canvas.ZIndex="10001"
+            Width="Auto"
+            ToolTipService.ToolTip="Total trees planted/needed for 2011">
+            <TextBlock Height="15" TextWrapping="Wrap" Text="Total count:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Height="15" Margin="3" TextWrapping="Wrap" Text="{Binding Trees.Count}" TextAlignment="Center" FontWeight="Bold" Foreground="#FF093109" Width="Auto" MinWidth="50" />
+                <TextBlock Text="/" Margin="3"/>
+                <TextBlock Height="15" Margin="3" TextWrapping="Wrap" Text="{Binding TotalTreesNeeded}" TextAlignment="Center" FontWeight="Bold" Foreground="#FF093109" Width="88" />
+            </StackPanel>
+        </StackPanel>
+
+        <!--Cursor-->
+        <controls:PlantTreeCursorControl Canvas.Left="806" Canvas.Top="488" x:Name="TreeCursor" Width="40" Height="110" Visibility="Collapsed" />
+        <controls:ShakingArrowControl Canvas.Left="650" Canvas.Top="17" x:Name="shakingArrowControl1" Visibility="{Binding IsPlantingMode, Converter={StaticResource InverseBoolToVisibility}}" 
+                                      Height="32" Width="80" 
+                                      Canvas.ZIndex="10002"/>
+        <controls:JumpingFishControl Canvas.Left="296" Canvas.Top="535" Height="53" x:Name="jumpingFishControl1" Width="82" />
+        <Path x:Name="Cloud_4_Copy"
+        	Width="73" Height="48" 
+        	Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+        	Style="{StaticResource PathStyleCloud}" 
+        	Canvas.Left="488" Canvas.Top="109" d:LayoutOverrides="HorizontalAlignment" RenderTransformOrigin="0.5,0.5" >
+        	<Path.RenderTransform>
+        		<CompositeTransform/>
+        	</Path.RenderTransform>
+        </Path>
+        <Image x:Name="turtle" Height="24" Canvas.Left="436" Source="/PlantATree;component/Assets/Media/turtle-icon.png" Stretch="Fill" Canvas.Top="472" Width="20" RenderTransformOrigin="0.5,0.5">
+        	<Image.RenderTransform>
+        		<CompositeTransform/>
+        	</Image.RenderTransform>
+        </Image>
+        <controls:PlantingMessageControl Canvas.Left="568" Canvas.Top="12" Height="50" x:Name="plantingMessageControl1" Width="150"  
+                                         Visibility="{Binding IsPlantingMode, Converter={StaticResource BoolToVisibility}}"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="PlantATree.App"
+             xmlns:app="clr-namespace:PlantATree"
+             xmlns:vm="clr-namespace:PlantATree.ViewModels"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/Styles.xaml"/>
+
+                <ResourceDictionary Source="Assets/TreeStyles.xaml"/>
+                <ResourceDictionary Source="Assets/CloudStyles.xaml"/>
+                <ResourceDictionary Source="Assets/HillStyles.xaml"/>
+                <ResourceDictionary Source="Assets/SunStyles.xaml"/>
+                <ResourceDictionary Source="Assets/SkyStyles.xaml"/>
+                <ResourceDictionary Source="Assets/RiverStyles.xaml"/>
+                <ResourceDictionary Source="Assets/ForestSkinStyles.xaml"/>
+                <ResourceDictionary Source="Assets/Converters.xaml"/>
+                <ResourceDictionary>
+                    <app:ApplicationResources x:Key="ApplicationResources" />
+                    <app:NotOperatorValueConverter x:Key="NotOperatorValueConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <vm:ViewModelLocator x:Key="Locator" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

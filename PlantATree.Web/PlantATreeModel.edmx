@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PlantATree.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PlantATreeModelStoreContainer">
+    <EntitySet Name="Trees" EntityType="PlantATree.Model.Store.Trees" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Trees">
+    <Key>
+      <PropertyRef Name="TreeId" />
+    </Key>
+    <Property Name="TreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatorName" Type="nvarchar" Nullable="true" MaxLength="72" />
+    <Property Name="Message" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="CoordinateX" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="CoordinateY" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="CoordinateZ" Type="decimal" Nullable="true" Precision="18" Scale="0" />
+    <Property Name="CreationDate" Type="datetime" Nullable="true" />
+    <Property Name="CreatorEmail" Type="nvarchar" Nullable="true" MaxLength="255" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlantATree.Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="PlantATreeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Trees" EntityType="PlantATree.Model.Tree" />
+        </EntityContainer>
+        <EntityType Name="Tree">
+          <Key>
+            <PropertyRef Name="TreeId" />
+          </Key>
+          <Property Name="TreeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreatorName" Type="String" MaxLength="72" Unicode="true" FixedLength="false" />
+          <Property Name="Message" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CoordinateX" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CoordinateY" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CoordinateZ" Precision="18" Scale="0" Type="Decimal" />
+          <Property Name="CreationDate" Type="DateTime" />
+          <Property Name="CreatorEmail" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlantATreeModelStoreContainer" CdmEntityContainer="PlantATreeEntities">
+    <EntitySetMapping Name="Trees">
+      <EntityTypeMapping TypeName="IsTypeOf(PlantATree.Model.Tree)">
+        <MappingFragment StoreEntitySet="Trees">
+          <ScalarProperty Name="TreeId" ColumnName="TreeId" />
+          <ScalarProperty Name="CreatorName" ColumnName="CreatorName" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CoordinateX" ColumnName="CoordinateX" />
+          <ScalarProperty Name="CoordinateY" ColumnName="CoordinateY" />
+          <ScalarProperty Name="CoordinateZ" ColumnName="CoordinateZ" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatorEmail" ColumnName="CreatorEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PlantATreeModel">
+        <EntityTypeShape EntityType="PlantATree.Model.Tree" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083331" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

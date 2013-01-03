@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="PlantATree.Controls.TreeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    mc:Ignorable="d"
+    d:DesignHeight="130" d:DesignWidth="110" 
+    xmlns:controls="clr-namespace:PlantATree.Controls" 
+             RenderTransformOrigin="0.5,1"
+             Width="50"
+             Height="56"
+    >
+    <UserControl.Resources>
+        <ControlTemplate x:Key="TreeToolTipTemplate">
+            <Grid>
+                <ed:Callout AnchorPoint="0.052,1.145" CalloutStyle="Oval"  Fill="#FFF4F4F5" FontSize="14.666999816894531" Margin="0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left">
+						<ed:Callout.Content>
+                <StackPanel>
+                    <TextBlock Margin="4" Text="{Binding Message}" FontSize="8" />
+                    <TextBlock Margin="4" Text="{Binding VreatorName}" HorizontalAlignment="Right" FontStyle="Italic" FontSize="8"/>
+                </StackPanel>
+                </ed:Callout.Content>
+					</ed:Callout>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ToolTipTemplate">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Background="PaleGoldenrod" MaxWidth="200">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Margin="2" Grid.Column="0">
+        
+                    </Grid>
+                    <ContentPresenter Grid.Column="1"
+                                        VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Viewbox x:Name="LayoutRoot">
+        <controls:Tree MaxWidth="300" MaxHeight="300" >
+            <ToolTipService.ToolTip>
+                <ToolTip Template="{StaticResource ToolTipTemplate}">
+                    <ToolTip.Content>
+                        <StackPanel>
+                            <TextBlock Margin="4" Text="{Binding Message}" FontSize="8" TextWrapping="Wrap"/>
+                            <TextBlock Margin="4" Text="{Binding CreatorName}" HorizontalAlignment="Right" FontStyle="Italic" FontSize="8"/>
+                        </StackPanel>
+                    </ToolTip.Content>
+                </ToolTip>
+            </ToolTipService.ToolTip>
+        </controls:Tree>
+    </Viewbox>
+</UserControl>

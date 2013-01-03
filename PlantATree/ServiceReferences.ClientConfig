@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ITreeService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://81.161.246.26/PlantATree/TreeService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITreeService"
+                contract="TreeService.ITreeService" name="BasicHttpBinding_ITreeService" />
+        </client>
+    </system.serviceModel>
+</configuration>

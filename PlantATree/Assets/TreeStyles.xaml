@@ -1,0 +1,106 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--######################################TREE#######################################-->
+
+    <!--Tree Trunk-->
+    <LinearGradientBrush x:Key="TreeTrunkFillBrush" 
+                         StartPoint="-0.0115657,0.497722" 
+                         EndPoint="1.0404,0.497722">
+        <GradientStop Color="#FF4A1511" Offset="0"/>
+        <GradientStop Color="#FF3A100B" Offset="0.511628"/>
+        <GradientStop Color="#FF2B0B06" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="TreeTrunkPathStyle" TargetType="Path">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource TreeTrunkFillBrush}"/>
+    </Style>
+
+    <!--Tree Crown-->
+
+    <!--Tree Crown Main Part-->
+    <LinearGradientBrush x:Key="TreeCrownMainPartFillBrush" StartPoint="0.466464,0.024723" EndPoint="1.30555,0.024723">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <SkewTransform CenterX="0.466464" CenterY="0.024723" AngleX="3.06972" AngleY="0"/>
+                <RotateTransform CenterX="0.466464" CenterY="0.024723" Angle="87.5509"/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF62C121" Offset="0"/>
+        <GradientStop Color="#FF4DA213" Offset="0.511628"/>
+        <GradientStop Color="#FF388306" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="TreeCrownMainPartPathStyle" TargetType="Path">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource TreeCrownMainPartFillBrush}"/>
+    </Style>
+
+    <!--Tree Crown MIddle Part-->
+    <LinearGradientBrush x:Key="TreeCrownMiddlePartFillBrush" StartPoint="0.466464,0.0247233" EndPoint="1.30555,0.0247233">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <SkewTransform CenterX="0.466464" CenterY="0.0247233" AngleX="3.06968" AngleY="0"/>
+                <RotateTransform CenterX="0.466464" CenterY="0.0247233" Angle="87.5509"/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF62C121" Offset="0"/>
+        <GradientStop Color="#FF4DA213" Offset="0.511628"/>
+        <GradientStop Color="#FF388306" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="TreeCrownMiddlePartPathStyle" TargetType="Path">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource TreeCrownMiddlePartFillBrush}"/>
+    </Style>
+
+
+    <!--Tree Crown Front Part 1-->
+    <LinearGradientBrush x:Key="TreeCrownFrontPartOneFillBrush" StartPoint="0.466464,0.0247227" EndPoint="1.30555,0.0247227">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <SkewTransform CenterX="0.466464" CenterY="0.0247227" AngleX="3.06972" AngleY="0"/>
+                <RotateTransform CenterX="0.466464" CenterY="0.0247227" Angle="87.5509"/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF54AD18" Offset="0"/>
+        <GradientStop Color="#FF47990F" Offset="0.511628"/>
+        <GradientStop Color="#FF3A8607" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="TreeCrownFrontPartOnePathStyle" TargetType="Path">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource TreeCrownFrontPartOneFillBrush}"/>
+    </Style>
+
+    <!--Tree Crown Front Part 2-->
+    <LinearGradientBrush x:Key="TreeCrownFrontPartTwoFillBrush" StartPoint="0.466464,0.0247231" EndPoint="1.30555,0.0247231">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <SkewTransform CenterX="0.466464" CenterY="0.0247231" AngleX="3.06974" AngleY="0"/>
+                <RotateTransform CenterX="0.466464" CenterY="0.0247231" Angle="87.5509"/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF58B31B" Offset="0"/>
+        <GradientStop Color="#FF499C11" Offset="0.511628"/>
+        <GradientStop Color="#FF3A8607" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="TreeCrownFrontPartTwoPathStyle" TargetType="Path">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource TreeCrownFrontPartTwoFillBrush}"/>
+    </Style>
+
+    <!--<ControlTemplate x:Key="TreeToolTipTemplate">
+        <Border>
+            <Grid>
+                <ContentPresenter Grid.Column="1"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>-->
+</ResourceDictionary>

@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--###################################### Sky #######################################-->
+    <LinearGradientBrush x:Key="SkyFillBrush" >
+        <GradientStop Color="#FF6DDCFC" Offset="0"/>
+        <GradientStop Color="#FF0CB2D8" Offset="1"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

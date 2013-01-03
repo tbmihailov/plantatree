@@ -1,0 +1,37 @@
+﻿<Canvas
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="PlantATree.Controls.Hill"
+	d:DesignWidth="800" d:DesignHeight="340"
+    Width="800"
+    Height="340"
+    >
+    <Canvas.Resources>
+    </Canvas.Resources>
+    <!--<Viewbox>-->
+    <Canvas 
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+            x:Name="LayoutRoot" 
+            Height="340"
+            Width="800"
+            Background="Transparent"
+            >
+        <Path  x:Name="HillVisual"
+		        Canvas.Left="0" Canvas.Top="0" 
+		        Data="F1 M343.703,316.85901 C343.703,316.85999 181.10201,275.85901 0,334.431 L0,599.80798 L799.74402,599.80798 L799.74402,293.431 C799.74402,293.431 644.76398,211.42999 343.703,316.85901 z" 
+		        Style="{StaticResource HillPathStyle}" 
+                   Height="336" />
+        <Path x:Name="RiverVisual"
+                      Width="208.069" 
+                      Height="283.701" 
+                      Canvas.Left="225" 
+                      Canvas.Top="52"
+                      Stretch="Fill" 
+                      Fill="#FF4982ED" 
+                      Data="F1 M 341.62,316.107C 342.611,316.662 150.246,372.075 320.356,460.172C 320.356,460.172 355.645,474.682 322.166,492.302C 322.166,492.302 264.483,515.323 214.606,599.808L 375.433,599.808C 375.433,599.808 355.076,549.044 401.899,516.398C 401.899,516.398 454.829,461.599 391.72,437.114C 391.72,437.114 316.395,418.459 310.288,410.298C 310.288,410.298 240.053,364.826 341.62,316.107 Z "
+            />
+    </Canvas></Canvas>

@@ -1,0 +1,42 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="PlantATree.Controls.ShakingArrowControl"
+    mc:Ignorable="d"
+    d:DesignHeight="32" d:DesignWidth="80">
+	<UserControl.Resources>
+
+		<Storyboard x:Name="ShakingStoryboard" RepeatBehavior="Forever">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="blockArrow">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="11"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="11"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+
+	</UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+    	<ed:BlockArrow x:Name="blockArrow" Orientation="Right" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5">
+    		<ed:BlockArrow.RenderTransform>
+    			<CompositeTransform/>
+    		</ed:BlockArrow.RenderTransform>
+    		<ed:BlockArrow.Fill>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#64D0E0CC" Offset="0.004"/>
+    				<GradientStop Color="#FF44FF1F" Offset="1"/>
+    				<GradientStop Color="#FF99DF8B" Offset="0.207"/>
+    			</LinearGradientBrush>
+    		</ed:BlockArrow.Fill>
+    	</ed:BlockArrow>
+    	<TextBlock x:Name="textBlock" Margin="11,9,13,7" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5">
+    		<TextBlock.RenderTransform>
+    			<CompositeTransform/>
+    		</TextBlock.RenderTransform><Run FontSize="8" Text="Plant a tree"/></TextBlock>
+    </Grid>
+</UserControl>

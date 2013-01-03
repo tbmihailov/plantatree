@@ -1,0 +1,21 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	mc:Ignorable="d"
+	x:Class="PlantATree.TooltipControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<Grid x:Name="LayoutRoot">
+		<ed:Callout AnchorPoint="0.052,1.145" CalloutStyle="Oval"  Fill="#FFF4F4F5" FontSize="14.666999816894531" Margin="0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Left">
+			<ed:Callout.Content>
+				<StackPanel>
+					<TextBlock Margin="4" Text="Save the planet - plant a tree!" FontSize="10.667" />
+					<TextBlock Margin="4" Text="Todor Mihailov" HorizontalAlignment="Right" FontStyle="Italic" FontSize="10.667"/>
+				</StackPanel>		
+			</ed:Callout.Content>
+		</ed:Callout>
+	</Grid>
+</UserControl>

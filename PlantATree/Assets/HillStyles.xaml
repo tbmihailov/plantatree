@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--###################################### Hill #######################################-->
+    <LinearGradientBrush x:Key="HillFillBrush" EndPoint="1.37386000156403,0.134829998016357" StartPoint="0.458986014127731,0.134829998016357">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <SkewTransform AngleY="0" AngleX="-1.27651" CenterY="0.13483" CenterX="0.458986"/>
+                <RotateTransform Angle="90.2748" CenterY="0.13483" CenterX="0.458986"/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF9CD32A" Offset="0"/>
+        <GradientStop Color="#FF70B81C" Offset="0.511628"/>
+        <GradientStop Color="#FF449E0F" Offset="1"/>
+    </LinearGradientBrush>
+
+    <Style x:Key="HillPathStyle" TargetType="Path">
+        <Setter Property="Fill" Value="{StaticResource HillFillBrush}"/>
+        <Setter Property="Width" Value="800"/>
+        <Setter Property="Height" Value="340"/>
+        <Setter Property="Stretch" Value="Fill"/>
+    </Style>
+
+</ResourceDictionary>

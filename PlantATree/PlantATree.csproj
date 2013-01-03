@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86F85634-AAF7-408F-9CCC-6B79D748B765}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlantATree</RootNamespace>
+    <AssemblyName>PlantATree</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>PlantATree.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>PlantATree.App</SilverlightAppEntry>
+    <TestPageFileName>PlantATreeTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.SL4, Version=3.0.0.30106, Culture=neutral, PublicKeyToken=e951d4eb83d0126f, processorArchitecture=MSIL" />
+    <Reference Include="GalaSoft.MvvmLight.SL4, Version=3.0.0.30091, Culture=neutral, PublicKeyToken=918f02b0f4b4b116, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Expression.Effects" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Silverlight\v3.0\Toolkit\Nov09\Bin\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Behaviours\Collision.cs" />
+    <Compile Include="Assets\Behaviours\FollowMouse.cs" />
+    <Compile Include="Assets\Behaviours\GameEnvironment.cs" />
+    <Compile Include="Assets\Behaviours\Motion.cs" />
+    <Compile Include="Assets\Resources\ApplicationResources.cs" />
+    <Compile Include="Assets\Resources\ApplicationStrings.Designer.cs" />
+    <Compile Include="Assets\Resources\ErrorResources.Designer.cs" />
+    <Compile Include="Assets\Resources\SecurityQuestions.Designer.cs" />
+    <Compile Include="Controls\BusyIndicator.cs" />
+    <Compile Include="Controls\Cloud.xaml.cs">
+      <DependentUpon>Cloud.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Hill.xaml.cs">
+      <DependentUpon>Hill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\JumpingFishControl.xaml.cs">
+      <DependentUpon>JumpingFishControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlantingMessageControl.xaml.cs">
+      <DependentUpon>PlantingMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShakingArrowControl.xaml.cs">
+      <DependentUpon>ShakingArrowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlantTreeCursor.xaml.cs">
+      <DependentUpon>PlantTreeCursor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PlantTreeCursorControl.xaml.cs">
+      <DependentUpon>PlantTreeCursorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RecycledMarkControl.xaml.cs">
+      <DependentUpon>RecycledMarkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\River.xaml.cs">
+      <DependentUpon>River.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sky.xaml.cs">
+      <DependentUpon>Sky.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpadeControl.xaml.cs">
+      <DependentUpon>SpadeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sun.xaml.cs">
+      <DependentUpon>Sun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TooltipControl.xaml.cs">
+      <DependentUpon>TooltipControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tree.xaml.cs">
+      <DependentUpon>Tree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeBranch.xaml.cs">
+      <DependentUpon>TreeBranch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeControl.xaml.cs">
+      <DependentUpon>TreeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VisualStates.cs" />
+    <Compile Include="Controls\YoungTree.xaml.cs">
+      <DependentUpon>YoungTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DesignModels\DesignTrees.cs" />
+    <Compile Include="DesignServices\DesignPageConductor.cs" />
+    <Compile Include="DesignServices\DesignServiceProvider.cs" />
+    <Compile Include="DesignServices\DesignTreeDataService.cs" />
+    <Compile Include="Helpers\BoolToVisibilityConverter.cs" />
+    <Compile Include="Helpers\DataFieldExtensions.cs" />
+    <Compile Include="Helpers\NotOperatorValueConverter.cs" />
+    <Compile Include="Helpers\TargetNullValueConverter.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\IsPlantingMessage.cs" />
+    <Compile Include="Messages\ShowAboutMessage.cs" />
+    <Compile Include="Messages\ErrorMessage.cs" />
+    <Compile Include="Messages\FrameMessage.cs" />
+    <Compile Include="Messages\ShowHelpWindowsMesage.cs" />
+    <Compile Include="Messages\TreeMessages.cs" />
+    <Compile Include="Models\Error.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\TreeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\HasChangesEventArgs.cs" />
+    <Compile Include="Services\IPageConductor.cs" />
+    <Compile Include="Services\ITreeDataService.cs.cs" />
+    <Compile Include="Services\PageConductor.cs" />
+    <Compile Include="Services\ServiceProvider.cs" />
+    <Compile Include="Services\ServiceProviderBase.cs" />
+    <Compile Include="Services\TreeDataService.cs" />
+    <Compile Include="ViewModels\ForestNatureViewModel.cs" />
+    <Compile Include="ViewModels\NewTreeViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErrorWindow.xaml.cs">
+      <DependentUpon>ErrorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ForestChildWindow.xaml.cs">
+      <DependentUpon>ForestChildWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ForestNature.xaml.cs">
+      <DependentUpon>ForestNature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadTreesUserControl.xaml.cs">
+      <DependentUpon>LoadTreesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTreeView.xaml.cs">
+      <DependentUpon>NewTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTreeWindow.xaml.cs">
+      <DependentUpon>NewTreeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreePlantingProcessView.xaml.cs">
+      <DependentUpon>TreePlantingProcessView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewTokens.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Assets\CloudStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\ForestSkinStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\HillStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\RiverStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\SkyStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\SunStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\TreeStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BusyIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Cloud.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Hill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\JumpingFishControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PlantingMessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ShakingArrowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlantTreeCursor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PlantTreeCursorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RecycledMarkControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\River.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sky.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SpadeControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sun.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TooltipControl.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Tree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeBranch.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TreeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\YoungTree.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ErrorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ForestChildWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ForestNature.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\HelpWindow.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoadTreesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTreeWindow.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TreePlantingProcessView.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\TreeService\PlantATree.TreeService.Tree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TreeService\TreeService.wsdl" />
+    <None Include="Service References\TreeService\TreeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TreeService\TreeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TreeService\TreeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TreeService\TreeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TreeService\TreeService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Assets\Media\blue-fish-icon.png" />
+    <Resource Include="Assets\Media\earth-day-action.png" />
+    <Resource Include="Assets\Media\new-tree-button.png" />
+    <Resource Include="Assets\Media\recycle-icon.png" />
+    <Resource Include="Assets\Media\recycled-paper-dark.png" />
+    <Resource Include="Assets\Media\recycled-paper-light.png" />
+    <Resource Include="Assets\Media\shovel-icon.png" />
+    <Resource Include="Assets\Media\tree-message.png" />
+    <Resource Include="Assets\Media\turtle-icon.png" />
+    <Resource Include="Assets\Media\wood-dark.png" />
+    <Resource Include="Assets\Media\wood-light.png" />
+    <Resource Include="Assets\Media\info-icon.png" />
+    <Resource Include="Assets\Media\cancel-icon.png" />
+    <Resource Include="Assets\Media\help-icon.png" />
+    <Content Include="Libs\GalaSoft.MvvmLight.Extras.SL4.dll" />
+    <Content Include="Libs\GalaSoft.MvvmLight.Extras.SL4.XML" />
+    <Content Include="Libs\GalaSoft.MvvmLight.SL4.dll" />
+    <Content Include="Libs\GalaSoft.MvvmLight.SL4.XML" />
+    <Content Include="Libs\System.Windows.Controls.Data.DataForm.Toolkit.dll" />
+    <Content Include="Libs\System.Windows.Interactivity.dll" />
+    <Content Include="Libs\System.Windows.Interactivity.xml" />
+    <None Include="Service References\TreeService\TreeService.disco" />
+    <None Include="Service References\TreeService\configuration91.svcinfo" />
+    <None Include="Service References\TreeService\configuration.svcinfo" />
+    <None Include="Service References\TreeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Resources\ApplicationStrings.resx" />
+    <EmbeddedResource Include="Assets\Resources\ErrorResources.resx" />
+    <EmbeddedResource Include="Assets\Resources\SecurityQuestions.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TreeService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

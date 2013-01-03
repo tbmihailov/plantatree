@@ -1,0 +1,18 @@
+﻿<Canvas x:Class="PlantATree.Controls.Cloud"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="60" d:DesignWidth="90"
+    Width="90" Height="60"
+        IsHitTestVisible="True">
+    <Canvas.Resources>
+    </Canvas.Resources>
+    <Path IsHitTestVisible="True"
+			Width="90" Height="60" 
+	        Data="F1 M199.85699,113.553 C207.735,113.553 214.121,121.111 214.121,130.435 C214.121,132.149 213.905,133.804 213.504,135.36301 L214.5,135.31799 C222.099,135.31799 228.259,143.12601 228.259,152.758 C228.259,162.39 222.099,170.198 214.5,170.198 C211.08701,170.198 207.964,168.623 205.55901,166.015 C203.99899,167.084 202.23199,167.687 200.362,167.687 C197.155,167.687 194.255,165.91499 192.17101,163.058 C189.849,165.909 186.573,167.687 182.942,167.687 C180.52499,167.687 178.26601,166.899 176.34,165.532 C174.377,166.897 172.05299,167.687 169.562,167.687 C166.69099,167.687 164.043,166.638 161.912,164.869 C159.34,166.81799 156.18401,167.966 152.77299,167.966 C144.12801,167.966 137.12,160.595 137.12,151.502 C137.12,143.56599 142.459,136.94099 149.56599,135.384 L149.491,134.062 C149.491,127.821 154.464,122.761 160.599,122.761 C161.131,122.761 161.655,122.799 162.16701,122.873 C163.60899,115.012 169.989,109.088 177.64,109.088 C183.289,109.088 188.245,112.317 191.033,117.17 C193.461,114.904 196.52499,113.553 199.85699,113.553 z" 
+            Style="{StaticResource PathStyleCloud}" 
+			d:LayoutOverrides="HorizontalAlignment" MouseLeftButtonDown="Path_MouseLeftButtonDown" />
+
+</Canvas>
